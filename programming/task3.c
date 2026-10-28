@@ -1,43 +1,70 @@
 #include <stdio.h>
 
-void zone_connection_counter(int a, int *good, int *work, int *low) {
-
-    if (a > -50) {
-            *(good)++;
-    }
-    else if (a <= -50 && a >= -70) {
-            *(work)++;
-    }
-    else if (a < -70) {
-            *(low)++;
+void zoner(int a[], int *good, int *ok, int *bad) {
+    *good = 0;
+    *ok = 0;
+    *bad = 0;
+    for (int i = 0; i < 24; i++) {
+        if (a[i] > -50) {
+            (*good)++;
+        }
+        else if ((a[i] <= -50) && (a[i] >= -70)) {
+            (*ok)++;
+        }
+        else {
+        (*bad)++;
+        }
     }
 }
 
-int average_value_per_day(int a[]) {
-    int sum_whole_day = 0;
-    for (int i = 0; i <= 23;i++) {
-        sum_whole_day += a[i];
+float avg_value(int value[]) {
+    int sum = 0;
+    for (int i = 0; i < 24; i++) {
+        sum += value[i];
     }
-    return sum_whole_day / 24.0;
+    return sum / 24.0;
 }
+// {-42, -54, -67, -81, -88, -79, -60, -45, -39, -52,  -63, -74, -85, -90, -77, -58, -44, -41, -53, -66, -72, -80, -59, -47}
+void max_len_bad(int value[], int *max_len, int *start, int *end) {
+    int len = 0;
+    (*max_len) = 0;
 
+    for (int i = 0; i < 23; i++) {
+        if (value[i] < -70 && value[i+1] < -70) {
+            len += 1;
+            if ((*max_len) < len) {
+                (*max_len) = len;
+            }
+        }
+        else {
+            len = 0;
+        }
+    }
+    for (int i = 0; i < 23; i++) {
+        if ((value[i] < -70) && (value[i+(*max_len)] < -70)) {
+            (*start) = i;
+            (*end) = ((i)+((*max_len)));
+        }
+    }
+    if (((*max_len)) > 0) {
+        (*max_len)++;
+    }
+}
 
 int main() {
+    int good_zone, ok_zone, bad_zone, max_len, start, end;
+    float average_value;
 
-    int rssi[24] = {-42, -55, -67, -81, -88, -79, -60, -45, -39, -52,  -63, -74, -85, -90, -77, -58, -44, -41, -53, -66, -72, -80, -59, -47};
+    int rssi[24] = {-42, -54, -67, -81, -88, -79, -60, -45, -39, -52,  -63, -74, -85, -90, -77, -58, -44, -41, -53, -66, -72, -80, -59, -47};
+    
+    zoner(rssi, &good_zone, &ok_zone, &bad_zone);
 
-    int good = 0;
-    int work = 0;
-    int low = 0;
-    int sr_znach = 0;
+    average_value = avg_value(rssi);
 
-    for (int i = 0; i <= 23;i++) {
-        zone_connection_counter(rssi[i], &good, &work, &low);
-    }
-    sr_znach = average_value_per_day(rssi);
+    max_len_bad(rssi, &max_len, &start, &end);
 
-    printf("Попало в зону Отличная связь: %d раз\n", good);
-    printf("Попало в зону Рабочая связь: %d раз\n", work);
-    printf("Попало в зону Слабая связь: %d раз\n", low);
-    printf("Среднее значение: %d\n", sr_znach);
+    printf("Попала в зону <Отличная связь> %d раз\nПопало в зону <Рабочая связь> %d раз\nПопало в зону <Плохая связь> %d раз\n", good_zone, ok_zone, bad_zone);
+    printf("Средний уровень за сутки: %.2f dBm\n", average_value);
+    printf("Длина самого длинного провала: %d\nНачало провала: %d\nКонец провала: %d\n", max_len, start, end);
+    return 0;
 }
