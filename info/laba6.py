@@ -65,8 +65,56 @@
 # for i in range(1, len(depths) - 1):
 #     if (depths[i - 1] < depths[i]) and (depths[i + 1] < depths[1]):
 #         depths_otvet.append(depths[i])
-#
+
 # if len(depths_otvet) != 0:
 #     max_depths_otvet = max(depths_otvet)
 #     depths.remove(max_depths_otvet)
 # print(depths)
+
+
+
+# # задание F
+
+# card = input("Номер карты: ")
+# even = [int(d) for d in card[1::2]]
+# odd = [int(d) for d in card[::2]]
+# sum_even = sum(even)
+# sum_2odd = 0
+# for i in odd:
+#     i = i * 2
+#     if i > 9:
+#         i = i - 9
+#     sum_2odd += i
+# if (sum_even + sum_2odd) % 10 == 0:
+#     print("Корректный номер")
+# else:
+#     print("Некорректный номер")
+
+
+
+# #   задание G
+
+# n = int(input("Кол-во слов: "))
+# words = []
+# abbrev = []
+# for i in range(n):
+#     words.append(input("Слово: "))
+
+# for x in words:
+#     if len(x) <= 10:
+#         abbrev.append(x)
+#     else:
+#         x = str(x[0]) + str(len(x)-2) + str(x[-1])
+#         abbrev.append(x)
+# for i in range(n):
+#     print(abbrev[i])
+
+
+
+#   задание H
+
+n = int(input("Кол-во комнат: "))
+rooms = []
+for i in range(n):
+    rooms.append(input("Занято и максимум: ").split())
+print(rooms)
