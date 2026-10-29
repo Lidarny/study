@@ -135,3 +135,62 @@
 # else:
 #
 # print(answer)
+
+
+
+#    задание L
+
+
+
+#    задание M
+
+# dirty = (input("Список строк с оценками: "))
+# dirty = ((dirty).split(","))
+# # print(dirty)
+# clear = []
+# for x in dirty:
+#     if "5" in x or "отл" in x:
+#         if 5 in clear:
+#             continue
+#         else:
+#             clear.append(5)
+#     if "4" in x or "хор" in x:
+#         if 4 in clear:
+#             continue
+#         else:
+#             clear.append(4)
+#     if "3" in x or "уд" in x:
+#         if 3 in clear:
+#             continue
+#         else:
+#             clear.append(3)
+#     if "2" in x or "неуд" in x:
+#         if 2 in clear:
+#             continue
+#         else:
+#             clear.append(2)
+# print(sorted(clear)[::-1])
+
+
+#    задание Q
+
+# n = int(input("Кол-во команд: "))
+# comand = (input("Команды: ")).split()
+# if len(comand) != n:
+#     print("n не равно кол-ву команд")
+# else:
+#     x = 0
+#     y = 0
+#     for i in comand:
+#         if i == "U":
+#             y += 1
+#         elif i == "D":
+#             y -= 1
+#         elif i == "L":
+#             x -= 1
+#         elif i == "R":
+#             x += 1
+#         else:
+#             print("Команда не из списка [U D L R]")
+#     print(x, y)
+#     print(abs(x) + abs(y))
