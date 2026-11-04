@@ -124,17 +124,19 @@
 
 
 
-# задание I
-
-# s = (input("кол-во чисел | сдвиг: ")).split()
-# n_k = [int(x) for x in s]
-# b = str(input("числа: ")).split()
-# a = [int(x) for x in b]
-# if n_k[0] >= n_k[1]:
-#     answer =
-# else:
+# Задание I
+# n,k = map(int,input().split())
+# a =[int(x) for x in input().split(' ')]
 #
-# print(answer)
+# while k>n: k = k-n
+# for i in range(n-k):
+# a.insert(n, a[0])
+# a.remove(a[0])
+#
+# otv = ''
+# for i in a:
+# otv += str(i) + ' '
+# print(otv)
 
 
 
