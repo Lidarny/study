@@ -1,41 +1,89 @@
 #include <stdio.h>
 
-
-
 int main() {
-    int B1;
-    int B2;
-    int B3;
+    float B1;
+    float B2;
+    float B3;
 
-    int det;
-    int det_x;
-    int det_y;
-    int det_z;
+    int N;
 
-    int N = 3;
+    float det;
+    float det_x;
+    float det_y;
+    float det_z;
+
+    printf("Размер матрицы (2 или 3): ");
+    scanf("%d", &N);
 
     int matrix[N][N];
 
-    matrix[0][0] = 1;
-    matrix[0][1] = 2;
-    matrix[0][2] = 3;
-    matrix[1][0] = 4;
-    matrix[1][1] = 5;
-    matrix[1][2] = 6;
-    matrix[2][0] = 7;
-    matrix[2][1] = 8;
-    matrix[2][2] = 0;
+    if (N == 2) {
+        
+        printf("matrix[0][0]: ");
+        scanf("%d", &matrix[0][0]);
+        printf("matrix[0][1]: ");
+        scanf("%d", &matrix[0][1]);
+        printf("matrix[1][0]: ");
+        scanf("%d", &matrix[1][0]);
+        printf("matrix[1][1]: ");
+        scanf("%d", &matrix[1][1]);
 
+        printf("B1: ");
+        scanf("%f", &B1);
+        printf("B2: ");
+        scanf("%f", &B2);
 
-    B1 = 5;
-    B2 = 8;
-    B3 = 2;
+        det = ((matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]));
+        det_x = ((B1 * matrix[1][1]) - (B2 * matrix[0][1]));
+        det_y = ((matrix[0][0] * B2) - (matrix[1][0] * B1));
+        printf("\nx: %.1f\ny: %.1f\n", (det_x/det), (det_y/det));
+    }
 
-    det = (matrix[0][0] * matrix[1][1] * matrix[2][2] + matrix[1][0] * matrix[2][1] * matrix[0][2] + matrix[0][1] * matrix[1][2] * matrix[2][0]) - (matrix[2][0] * matrix[1][1] * matrix[0][2] + matrix[2][1] * matrix[1][2] * matrix[0][0] + matrix[1][0] * matrix[0][1] * matrix[2][2]);
-    det_x = (B1 * matrix[1][1] * matrix[2][2] + B1 * matrix[2][1] * matrix[0][2] + matrix[0][1] * matrix[1][2] * B3) - (B2 * matrix[1][1] * matrix[0][2] + matrix[2][1] * matrix[1][2] * B1 + B2 * matrix[0][1] * matrix[2][2]);
-    det_y = (matrix[0][0] * B2 * matrix[2][2] + matrix[1][0] * B3 * matrix[0][2] + B1 * matrix[1][2] * matrix[2][0]) - (matrix[2][0] * B2 * matrix[0][2] + B3 * matrix[1][2] * matrix[0][0] + matrix[1][0] * B1 * matrix[2][2]);
-    det_z = (matrix[0][0] * matrix[1][1] * B3 + matrix[1][0] * matrix[2][1] * B1 + matrix[0][1] * B2 * matrix[2][0]) - (matrix[2][0] * matrix[1][1] * B1 + matrix[2][1] * B2 * matrix[0][0] + matrix[1][0] * matrix[0][1] * B3);
-    printf("x = %d\ny = %d\nz = %d\n", (det_x / det), (det_y / det), (det_z) / det);
+    if (N == 3) {
+        printf("matrix[0][0]: ");
+        scanf("%d", &matrix[0][0]);
+        printf("matrix[0][1]: ");
+        scanf("%d", &matrix[0][1]);                    // B1  [0][1]  [0][2]
+        printf("matrix[0][2]: ");                      
+        scanf("%d", &matrix[0][2]);                    // B2  [1][1]  [1][2]
+        printf("matrix[1][0]: ");
+        scanf("%d", &matrix[1][0]);                    // B3  [2][1]  [2][2]
+        printf("matrix[1][1]: ");
+        scanf("%d", &matrix[1][1]);
+        printf("matrix[1][2]: ");
+        scanf("%d", &matrix[1][2]);
+        printf("matrix[2][0]: ");
+        scanf("%d", &matrix[2][0]);
+        printf("matrix[2][1]: ");
+        scanf("%d", &matrix[2][1]);
+        printf("matrix[2][2]: ");
+        scanf("%d", &matrix[2][2]);
 
+        printf("B1: ");
+        scanf("%f", &B1);
+        printf("B2: ");
+        scanf("%f", &B2);
+        printf("B3: ");
+        scanf("%f", &B3);
+
+        det = (matrix[0][0] * matrix[1][1] * matrix[2][2] + matrix[1][0] * matrix[2][1] * matrix[0][2] + matrix[0][1] * matrix[1][2] * matrix[2][0] - 
+              (matrix[2][0] * matrix[1][1] * matrix[0][2] + matrix[0][1] * matrix[1][0] * matrix[2][2] + matrix[0][0] * matrix[2][1] * matrix[1][2]));
+
+        det_x = (B1 * matrix[1][1] * matrix[2][2] + B2 * matrix[2][1] * matrix[0][2] + matrix[0][1] * matrix[1][2] * B3 - 
+                (B3 * matrix[1][1] * matrix[0][2] + matrix[0][1] * B2 * matrix[2][2] + B1 * matrix[2][1] * matrix[1][2]));
+
+        det_y = (matrix[0][0] * B2 * matrix[2][2] + matrix[1][0] * B3 * matrix[0][2] + B1 * matrix[1][2] * matrix[2][0] - 
+                (matrix[2][0] * B2 * matrix[0][2] + B1 * matrix[1][0] * matrix[2][2] + matrix[0][0] * B3 * matrix[1][2]));
+
+        det_z = (matrix[0][0] * matrix[1][1] * B3 + matrix[1][0] * matrix[2][1] * B1 + matrix[0][1] * B2 * matrix[2][0] - 
+                (matrix[2][0] * matrix[1][1] * B1 + matrix[0][1] * matrix[1][0] * B3 + matrix[0][0] * matrix[2][1] * B2));
+        
+        if (det == 0) {
+            printf("Нет единственного решения\n");
+        }
+        else {
+            printf("\nx: %.1f\ny: %.1f\nz: %.1f\n", (det_x/det), (det_y/det), (det_z/det));
+        }
+    }
     return 0;
 }
