@@ -146,7 +146,6 @@
 
 # dirty = (input("Список строк с оценками: "))
 # dirty = ((dirty).split(","))
-# # print(dirty)
 # clear = []
 # for x in dirty:
 #     if "5" in x or "отл" in x:
@@ -175,13 +174,13 @@
 #    задание Q
 
 # n = int(input("Кол-во команд: "))
-# comand = (input("Команды: ")).split()
-# if len(comand) != n:
+# command = (input("Команды: ")).split()
+# if len(command) != n:
 #     print("n не равно кол-ву команд")
 # else:
 #     x = 0
 #     y = 0
-#     for i in comand:
+#     for i in command:
 #         if i == "U":
 #             y += 1
 #         elif i == "D":
