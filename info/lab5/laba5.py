@@ -1,3 +1,5 @@
+#                    задание 1
+
 # word = str(input("Логи: "))
 # slovo = []
 # for l in word:
@@ -7,6 +9,8 @@
 # print("".join(slovo))
 
 
+
+#                   задание 2
 
 # N = int(input("Высота ёлочки: "))
 # k = 1
@@ -18,6 +22,8 @@
 # print(" " * (N - 1), "#")
 
 
+
+#                   задание 3
 
 # N = int(input("Верхняя граница поиска: "))
 # cnt = 0
@@ -32,12 +38,12 @@
 
 
 
-# text = str(input("Основная строка: "))            NO
-# word = str(input("Искомое слово: "))
+#                   Задание 4           NO
 
 
 
-#                   5 задание
+#                   задание 5
+
 # import random
 #
 # i = random.randint(1, 100)
@@ -56,6 +62,7 @@
 
 
 #                   Задание 6
+
 # message = str(input("Строка: "))
 # choice = int(input("Номер действия (1-11): "))
 #
@@ -100,6 +107,7 @@
 
 
 #                   Задание 7
+
 # email = str(input("Email пользователя: "))
 # password = str(input("Пароль: "))
 # prichina = []
@@ -130,6 +138,7 @@
 
 
 #                   Задание 8
+
 # line1 = input('Первая строка: ')
 # line2 = input('Вторая строка: ')
 # line3 = input('Третья строка: ')
@@ -147,9 +156,33 @@
 
 
 #                   Задание 9
-# s = input("Зашифрованное слово, заканчивающееся на #: ")                          NO
+
+# s = input("Зашифрованное слово, заканчивающееся на #: ")
+# even = []
+# odd = []
+# if "#" in s[-1]:
+#     for x in range(2, len(s), 2):
+#         even.append(x)
+#     for x in range(1, len(s), 2):
+#         odd.append(x)
+#     even.sort(reverse=True)
+#     cipher = odd + even
+#
+#     for x in cipher:
+#         print(s[x-1], end="")
+# else:
+#     print("Ошибка! Отсутствует символ #")
 
 
 
 #                   Задание 10
-# NO
+
+# s = str(input("Имя в camelCase: "))
+#
+# import string
+#
+# for x in s:
+#     if x.isupper():
+#         s = s.replace(x, "_" + x)
+# s = s.lower()
+# print(s)
