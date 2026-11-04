@@ -43,11 +43,11 @@ int main() {
         printf("matrix[0][0]: ");
         scanf("%d", &matrix[0][0]);
         printf("matrix[0][1]: ");
-        scanf("%d", &matrix[0][1]);                    // B1  [0][1]  [0][2]
-        printf("matrix[0][2]: ");                      
-        scanf("%d", &matrix[0][2]);                    // B2  [1][1]  [1][2]
+        scanf("%d", &matrix[0][1]);
+        printf("matrix[0][2]: ");
+        scanf("%d", &matrix[0][2]);
         printf("matrix[1][0]: ");
-        scanf("%d", &matrix[1][0]);                    // B3  [2][1]  [2][2]
+        scanf("%d", &matrix[1][0]);
         printf("matrix[1][1]: ");
         scanf("%d", &matrix[1][1]);
         printf("matrix[1][2]: ");
