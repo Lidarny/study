@@ -185,4 +185,8 @@
 #     if x.isupper():
 #         s = s.replace(x, "_" + x)
 # s = s.lower()
+<<<<<<< HEAD
 # print(s)
+=======
+# print(s)
+>>>>>>> 19aac68ea14b5022b8621b13a6a63043679a78b4
