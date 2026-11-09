@@ -22,6 +22,8 @@ int main() {
         }
         text_fixed[j++] = text[i]; 
     }
+    text_fixed[j] = '\0';
+    
     printf("Исправленный текст: %s", text_fixed);    
     printf("\nПробелов убрано: %d\n", counter);
 }
