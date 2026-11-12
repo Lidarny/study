@@ -90,3 +90,41 @@
 #         print(f"Нет ряда, где {k} человек(а) могут сесть рядом")
 #     if ok:
 #         print(cnt_rows)
+
+
+
+# #   задание 9
+#
+# n_m = input("Размер матрицы: ").split()
+#
+# n = int(n_m[0])
+# m = int(n_m[1])
+#
+# matrix = []
+#
+# for i in range(n):
+#     row = []
+#     for j in range(m):
+#         row.append(0)
+#     matrix.append(row)
+#
+# for i in range(n):
+#     for j in range(m):
+#         if i == 0 or j == 0:
+#             matrix[i][j] = 1
+#         else:
+#             matrix[i][j] = matrix[i-1][j] + matrix[i][j-1]
+# for i in range(n):
+#     print(" ".join(map(str, matrix[i])))
+
+
+
+# #   задание 10
+#
+# def tokenize(text):                     NO!!!!!
+
+
+
+#   задание 11
+
+# def window(lst, window_size):             NO!!!!!!
