@@ -1,21 +1,19 @@
-#   задание 4
-
+# #  задание 4
+#
 # n = int(input("Кол-во сокровищ: "))
 # coordinates = []
 # for i in range(n):
 #     coordinates.append(list(map(int, input("Координаты: ").split())))
-# coord_alex = list(map(int, (input("Координаты Александра: ")).split()))
+# coord_alex = list(map(int, (input("Координаты Александра Пистолетова: ")).split()))
 #
-# min_coord = [0][:]
-# sum_c_a = sum(coord_alex)
-# min_sum = sum(coordinates[0])
+# min_len_coord = ((coord_alex[0] - coordinates[0][0])**2 + (coord_alex[1] - coordinates[0][1])**2)**(1/2)
+# min_coord = [coordinates[0]]
 # for x in coordinates:
-#     if sum(x) < min_sum:
-#         min_sum = sum(x)
-#         min_coord[0] = x[0]
-#         min_coord[1] = x[1]
-#
-# print(min_coord)                                      NO!!!!!!!!!
+#     if min_len_coord > ((coord_alex[0] - x[0])**2 + (coord_alex[1] - x[1])**2)**(1/2):
+#         min_coord.append(x)
+#         min_len_coord = ((coord_alex[0] - x[0])**2 + (coord_alex[1] - x[1])**2)**(1/2)
+# print(f"Ближайшее сокровище: {min_coord[-1][0]} {min_coord[-1][1]}")
+# print(f'Расстояние: {round(min_len_coord, 2)}')
 
 
 
@@ -116,15 +114,3 @@
 #             matrix[i][j] = matrix[i-1][j] + matrix[i][j-1]
 # for i in range(n):
 #     print(" ".join(map(str, matrix[i])))
-
-
-
-# #   задание 10
-#
-# def tokenize(text):                     NO!!!!!
-
-
-
-#   задание 11
-
-# def window(lst, window_size):             NO!!!!!!
