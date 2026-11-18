@@ -1,0 +1,8 @@
+1 Computer 
+2 Mouse 
+3 LAPTOP 
+4 Data 
+5 RedHat 
+6 Laptop 
+7 Debian 
+8 lapto
