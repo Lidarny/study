@@ -25,8 +25,9 @@ int main() {
     rand_start_j_1 = rand_range(0, 3);
     rand_start_i_2 = rand_range(0, 3);
     rand_start_j_2 = rand_range(0, 3);
+
     if ((rand_start_i_1 == rand_start_i_2) && (rand_start_j_1 == rand_start_j_2)) {
-        while ((rand_start_i_1 != rand_start_i_2) || (rand_start_j_1 != rand_start_j_2)) {
+        while ((rand_start_i_1 == rand_start_i_2) && (rand_start_j_1 == rand_start_j_2)) {
             rand_start_i_2 = rand_range(0, 3);
             rand_start_j_2 = rand_range(0, 3);
         }
@@ -44,59 +45,71 @@ int main() {
         printf("\n");
         }
         printf("\nscores: %d\n\n", scores);
-        printf("Нажми w/a/s/d и Enter\nВведи 0, чтобы завершить игру\n");
+        printf("Нажми w/a/s/d и Enter\nНажми ctrl+c, чтобы завершить игру\n");
         scanf(" %c", &move[0]);
         if (move[0] == 119) {               //w
             for (int i = 0; i < 3; i++) {
                 if (matrix[0][0] == 0 || matrix[0][0] == matrix[1][0]) {
                     matrix[0][0] += matrix[1][0];
                     matrix[1][0] = 0;
+                    scores += (matrix[0][0] += matrix[1][0]);
                 }
                 if (matrix[0][1] == 0 || matrix[0][1] == matrix[1][1]) {
                     matrix[0][1] += matrix[1][1];
                     matrix[1][1] = 0;
+                    scores += (matrix[0][1] += matrix[1][1]);
                 }
                 if (matrix[0][2] == 0 || matrix[0][2] == matrix[1][2]) {
                     matrix[0][2] += matrix[1][2];
                     matrix[1][2] = 0;
+                    scores += (matrix[0][2] += matrix[1][2]);
                 }
                 if (matrix[0][3] == 0 || matrix[0][3] == matrix[1][3]) {
                     matrix[0][3] += matrix[1][3];
                     matrix[1][3] = 0;
+                    scores += (matrix[0][3] += matrix[1][3]);
                 }
 
                 if (matrix[1][0] == 0 || matrix[1][0] == matrix[2][0]) {
                     matrix[1][0] += matrix[2][0];
                     matrix[2][0] = 0;
+                    scores += (matrix[1][0] += matrix[2][0]);
                 }
                 if (matrix[1][1] == 0 || matrix[1][1] == matrix[2][1]) {
                     matrix[1][1] += matrix[2][1];
                     matrix[2][1] = 0;
+                    scores += (matrix[1][1] += matrix[2][1]);
                 }
                 if (matrix[1][2] == 0 || matrix[1][2] == matrix[2][2]) {
                     matrix[1][2] += matrix[2][2];
                     matrix[2][2] = 0;
+                    scores += (matrix[1][2] += matrix[2][2]);
                 }
                 if (matrix[1][3] == 0 || matrix[1][3] == matrix[2][3]) {
                     matrix[1][3] += matrix[2][3];
                     matrix[2][3] = 0;
+                    scores += (matrix[1][3] += matrix[2][3]);
                 }
 
                 if (matrix[2][0] == 0 || matrix[2][0] == matrix[3][0]) {
                     matrix[2][0] += matrix[3][0];
                     matrix[3][0] = 0;
+                    scores += (matrix[2][0] += matrix[3][0]);
                 }
                 if (matrix[2][1] == 0 || matrix[2][1] == matrix[3][1]) {
                     matrix[2][1] += matrix[3][1];
                     matrix[3][1] = 0;
+                    scores += (matrix[2][1] += matrix[3][1]);
                 }
                 if (matrix[2][2] == 0 || matrix[2][2] == matrix[3][2]) {
                     matrix[2][2] += matrix[3][2];
                     matrix[3][2] = 0;
+                    scores += (matrix[2][2] += matrix[3][2]);
                 }
-                if (matrix[2][3] == 0 || matrix[2][3] == matrix[2][3]) {
+                if (matrix[2][3] == 0 || matrix[2][3] == matrix[3][3]) {
                     matrix[2][3] += matrix[3][3];
                     matrix[3][3] = 0;
+                    scores += (matrix[2][3] += matrix[3][3]);
                 }
             }
         }
@@ -109,13 +122,9 @@ int main() {
         if (move[0] == 100) {
             printf("right\n");              //d
         }
-        // if (move[0] = 48) {
-        //     game == 0;
-        //     break;
-        // }
-        // else {
-        //     printf("Неверная команда\n");
-        // }
+        else {
+            printf("Неверная команда\n");
+        }
     }
     printf("Игра окончена\n");
 }
