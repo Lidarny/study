@@ -48,7 +48,7 @@ int main() {
         printf("\nscores: %d\n\n", scores);
         printf("Нажми w/a/s/d и Enter\nНажми ctrl+c, чтобы завершить игру\n");
         scanf(" %c", &move[0]);
-        if (move[0] == 119) {                                               //w
+        if (move[0] == 119 || move[0] == 87) {                                               //w
             for (int i = 0; i < 3; i++) {
                 if (matrix[0][0] == 0 || matrix[0][0] == matrix[1][0]) {
                     matrix[0][0] += matrix[1][0];
@@ -102,7 +102,7 @@ int main() {
                 }
             }
         }
-        else if (move[0] == 97) {                                                //a
+        else if (move[0] == 97 || move[0] == 65) {                                                //a
             for (int i = 0; i < 3; i++) {
                 if     (matrix[0][0] == 0 || matrix[0][0] == matrix[0][1]) {
                         matrix[0][0] += matrix[0][1];
@@ -156,7 +156,7 @@ int main() {
                     }
             }
         }
-        else if (move[0] == 115) {                                               //s
+        else if (move[0] == 115 || move[0] == 83) {                                               //s
             for (int i = 0; i < 3; i++) {
                 if     (matrix[3][0] == 0 || matrix[3][0] == matrix[2][0]) {
                         matrix[3][0] += matrix[2][0];
@@ -210,7 +210,7 @@ int main() {
                     }
                 }
             }
-        else if (move[0] == 100) {                                               //d
+        else if (move[0] == 100 || move[0] == 68) {                                               //d
             for (int i = 0; i < 3; i++) {
                 if     (matrix[0][3] == 0 || matrix[0][3] == matrix[0][2]) {
                         matrix[0][3] += matrix[0][2];
