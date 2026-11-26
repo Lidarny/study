@@ -13,6 +13,9 @@ int main() {
     char move[2];
     int scores = 0;
     int rand_start_i_1, rand_start_j_1, rand_start_i_2, rand_start_j_2; 
+    int rand_i, rand_j;
+    int cnt = 0;
+    int cnt_ok = 0;
     
     srand(time(NULL));
 
@@ -37,6 +40,29 @@ int main() {
     matrix[rand_start_i_2][rand_start_j_2] = 2;
     
     while (game == 1) {
+        int before[N][N];
+        bool has_empty = false;
+        bool can_move = false;
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (matrix[i][j] == 0) {
+                    has_empty = true;
+                }
+                if (i + 1 < 4 && matrix[i][j] == matrix[i+1][j]) {
+                    can_move = true;
+                if (j + 1 < 4 && matrix[i][j] == matrix[i][j+1]) {
+                    can_move = true;
+                }
+                }
+                before[i][j] = matrix[i][j];
+            }
+        }
+
+        if (has_empty == false && can_move == false) {
+            game = 0;
+        }
+
         printf("\n");
         for (int i = 0; i < N; i++) {        //вывод матрицы
             printf("  ");
@@ -266,6 +292,27 @@ int main() {
         }
         else {
             printf("Неверная команда\n");
+        }
+
+        rand_i = rand_range(0, 3);
+        rand_j = rand_range(0, 3);
+
+        cnt_ok = 0;
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (matrix[i][j] == before[i][j]) {
+                    cnt_ok += 1;
+                }
+            }
+        }
+        if (cnt_ok != 16) {
+            do {
+                rand_i = rand_range(0, 3);
+                rand_j = rand_range(0, 3);
+            } while (matrix[rand_i][rand_j] != 0);
+        
+        matrix[rand_i][rand_j] = 2;
         }
     }
     printf("Игра окончена\n");
