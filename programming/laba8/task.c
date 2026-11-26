@@ -50,10 +50,10 @@ int main() {
                     has_empty = true;
                 }
                 if (i + 1 < 4 && matrix[i][j] == matrix[i+1][j]) {
-                    can_move = true;
+                    can_move = true; 
+                }
                 if (j + 1 < 4 && matrix[i][j] == matrix[i][j+1]) {
                     can_move = true;
-                }
                 }
                 before[i][j] = matrix[i][j];
             }
