@@ -8,10 +8,10 @@ x = 16 * ((np.sin(t))**3)
 y = 13 * np.cos(t) - 5 * np.cos(2*t) - 2 * np.cos(3*t) - np.cos(4*t)
 
 fig, ax = plt.subplots(figsize=(8, 3))
-ax.set_xlim(-20, 20)
-ax.set_ylim(-20, 15)
+ax.set_xlim(-17, 17)
+ax.set_ylim(-18, 13)
 
-line, = ax.plot([], [], 'r-', marker='o', marksize=4, lw=2)   # запятая!
+line, = ax.plot([], [], 'r-', marker='o', markersize=4, lw=2)   # запятая!
 
 def update(frame):
     line.set_data(x[:frame+1], y[:frame+1])         # X = frame, Y = 5
