@@ -11,10 +11,10 @@ fig, ax = plt.subplots(figsize=(8, 3))
 ax.set_xlim(-17, 17)
 ax.set_ylim(-18, 13)
 
-line, = ax.plot([], [], 'r-', marker='o', markersize=4, lw=2)   # запятая!
+line, = ax.plot([], [], 'r-', marker='o', markersize=2, lw=3)
 
 def update(frame):
-    line.set_data(x[:frame+1], y[:frame+1])         # X = frame, Y = 5
+    line.set_data(x[:frame+1], y[:frame+1])
     return line,
 
 ani = FuncAnimation(fig, update, frames=250, interval=30, blit = True)
