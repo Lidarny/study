@@ -1,8 +1,8 @@
 printf "Выберите кол-во повторений (от 1 до 5)\n"
 read repeat
 
-if repeat -gt 5 ; then
-printf "Вы ввели больше 5"
+if [ "$repeat" -gt 5 ] ; then
+printf "Вы ввели больше 5\n"
 exit
 fi
 
@@ -15,9 +15,7 @@ printf "Выберите желаемый формат даты и времен�
 5) количество дней, прошедших с начала года со словом “дней”,
 полное название месяца\n"
 
-
-
-for i in {%repeat} ;
+for (( i=1; i<=repeat; i++ )) ;
   do
 read value
 if [ "$value" -eq 1  ] ; then
@@ -32,3 +30,4 @@ elif [ "$value" -eq 5 ] ; then
 echo "$(date +%j) дней $(date +%B)"
 fi
   done
+
