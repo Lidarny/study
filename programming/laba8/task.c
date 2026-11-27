@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 
 int rand_range(int min, int max) {
     return min + rand() % (max - min + 1);
