@@ -78,52 +78,88 @@ int main() {
         if (move[0] == 119 || move[0] == 87) {                                               //w
             for (int i = 0; i < 3; i++) {
                 if (matrix[0][0] == 0 || matrix[0][0] == matrix[1][0]) {
+                    if (matrix[0][0] != 0) {
+                        scores += matrix[0][0] * 2;
+                    }
                     matrix[0][0] += matrix[1][0];
                     matrix[1][0] = 0;
                 }
                 if (matrix[0][1] == 0 || matrix[0][1] == matrix[1][1]) {
+                    if (matrix[0][1] != 0) {
+                        scores += matrix[0][1] * 2;
+                    }
                     matrix[0][1] += matrix[1][1];
                     matrix[1][1] = 0;
                 }
                 if (matrix[0][2] == 0 || matrix[0][2] == matrix[1][2]) {
+                    if (matrix[0][2] != 0) {
+                        scores += matrix[0][2] * 2;
+                    }
                     matrix[0][2] += matrix[1][2];
                     matrix[1][2] = 0;
                 }
                 if (matrix[0][3] == 0 || matrix[0][3] == matrix[1][3]) {
+                    if (matrix[0][3] != 0) {
+                        scores += matrix[0][3] * 2;
+                    }
                     matrix[0][3] += matrix[1][3];
                     matrix[1][3] = 0;
                 }
 ////////////////
                 if (matrix[1][0] == 0 || matrix[1][0] == matrix[2][0]) {
+                    if (matrix[1][0] != 0) {
+                        scores += matrix[1][0] * 2;
+                    }
                     matrix[1][0] += matrix[2][0];
                     matrix[2][0] = 0;
                 }
                 if (matrix[1][1] == 0 || matrix[1][1] == matrix[2][1]) {
+                    if (matrix[1][1] != 0) {
+                        scores += matrix[1][1] * 2;
+                    }
                     matrix[1][1] += matrix[2][1];
                     matrix[2][1] = 0;
                 }
                 if (matrix[1][2] == 0 || matrix[1][2] == matrix[2][2]) {
+                    if (matrix[1][2] != 0) {
+                        scores += matrix[1][2] * 2;
+                    }
                     matrix[1][2] += matrix[2][2];
                     matrix[2][2] = 0;
                 }
                 if (matrix[1][3] == 0 || matrix[1][3] == matrix[2][3]) {
+                    if (matrix[1][3] != 0) {
+                        scores += matrix[1][3] * 2;
+                    }
                     matrix[1][3] += matrix[2][3];
                     matrix[2][3] = 0;
                 }
 ////////////////
                 if (matrix[2][0] == 0 || matrix[2][0] == matrix[3][0]) {
+                    if (matrix[2][0] != 0) {
+                        scores += matrix[2][0] * 2;
+                    }
                     matrix[2][0] += matrix[3][0];
                     matrix[3][0] = 0;
                 }
                 if (matrix[2][1] == 0 || matrix[2][1] == matrix[3][1]) {
+                    if (matrix[2][1] != 0) {
+                        scores += matrix[2][1] * 2;
+                    }
                     matrix[2][1] += matrix[3][1];
                     matrix[3][1] = 0;
                 }
                 if (matrix[2][2] == 0 || matrix[2][2] == matrix[3][2]) {
+                    if (matrix[2][2] != 0) {
+                        scores += matrix[2][2] * 2;
+                    }
                     matrix[2][2] += matrix[3][2];
                     matrix[3][2] = 0;
                 }
                 if (matrix[2][3] == 0 || matrix[2][3] == matrix[3][3]) {
+                    if (matrix[2][3] != 0) {
+                        scores += matrix[2][3] * 2;
+                    }
                     matrix[2][3] += matrix[3][3];
                     matrix[3][3] = 0;
                 }
@@ -132,52 +168,88 @@ int main() {
         else if (move[0] == 97 || move[0] == 65) {                                                //a
             for (int i = 0; i < 3; i++) {
                 if     (matrix[0][0] == 0 || matrix[0][0] == matrix[0][1]) {
+                    if (matrix[0][0] != 0) {
+                        scores += matrix[0][0] * 2;
+                    }
                         matrix[0][0] += matrix[0][1];
                         matrix[0][1] = 0;
                     }
                 if     (matrix[1][0] == 0 || matrix[1][0] == matrix[1][1]) {
+                    if (matrix[1][0] != 0) {
+                        scores += matrix[1][0] * 2;
+                    }
                         matrix[1][0] += matrix[1][1];
                         matrix[1][1] = 0;
                     }
                 if     (matrix[2][0] == 0 || matrix[2][0] == matrix[2][1]) {
+                    if (matrix[2][0] != 0) {
+                        scores += matrix[2][0] * 2;
+                    }
                         matrix[2][0] += matrix[2][1];
                         matrix[2][1] = 0;
                     }
                 if     (matrix[3][0] == 0 || matrix[3][0] == matrix[3][1]) {
+                    if (matrix[3][0] != 0) {
+                        scores += matrix[3][0] * 2;
+                    }
                         matrix[3][0] += matrix[3][1];
                         matrix[3][1] = 0;
                     }
 ////////////////
                 if     (matrix[0][1] == 0 || matrix[0][1] == matrix[0][2]) {
+                    if (matrix[0][1] != 0) {
+                        scores += matrix[0][1] * 2;
+                    }
                         matrix[0][1] += matrix[0][2];
                         matrix[0][2] = 0;
                     }
                 if     (matrix[1][1] == 0 || matrix[1][1] == matrix[1][2]) {
+                    if (matrix[1][1] != 0) {
+                        scores += matrix[1][1] * 2;
+                    }
                         matrix[1][1] += matrix[1][2];
                         matrix[1][2] = 0;
                     }
                 if     (matrix[2][1] == 0 || matrix[2][1] == matrix[2][2]) {
+                    if (matrix[2][1] != 0) {
+                        scores += matrix[2][1] * 2;
+                    }
                         matrix[2][1] += matrix[2][2];
                         matrix[2][2] = 0;
                     }
                 if     (matrix[3][1] == 0 || matrix[3][1] == matrix[3][2]) {
+                    if (matrix[3][1] != 0) {
+                        scores += matrix[3][1] * 2;
+                    }
                         matrix[3][1] += matrix[3][2];
                         matrix[3][2] = 0;
                     }
 ////////////////
                 if     (matrix[0][2] == 0 || matrix[0][2] == matrix[0][3]) {
+                    if (matrix[0][2] != 0) {
+                        scores += matrix[0][2] * 2;
+                    }
                         matrix[0][2] += matrix[0][3];
                         matrix[0][3] = 0;
                     }
                 if     (matrix[1][2] == 0 || matrix[1][2] == matrix[1][3]) {
+                    if (matrix[1][2] != 0) {
+                        scores += matrix[1][2] * 2;
+                    }
                         matrix[1][2] += matrix[1][3];
                         matrix[1][3] = 0;
                     }
                 if     (matrix[2][2] == 0 || matrix[2][2] == matrix[2][3]) {
+                    if (matrix[2][2] != 0) {
+                        scores += matrix[2][2] * 2;
+                    }
                         matrix[2][2] += matrix[2][3];
                         matrix[2][3] = 0;
                     }
                 if     (matrix[3][2] == 0 || matrix[3][2] == matrix[3][3]) {
+                    if (matrix[3][2] != 0) {
+                        scores += matrix[3][2] * 2;
+                    }
                         matrix[3][2] += matrix[3][3];
                         matrix[3][3] = 0;
                     }
@@ -186,52 +258,88 @@ int main() {
         else if (move[0] == 115 || move[0] == 83) {                                               //s
             for (int i = 0; i < 3; i++) {
                 if     (matrix[3][0] == 0 || matrix[3][0] == matrix[2][0]) {
+                    if (matrix[3][0] != 0) {
+                        scores += matrix[3][0] * 2;
+                    }
                         matrix[3][0] += matrix[2][0];
                         matrix[2][0] = 0;
                     }
                 if     (matrix[3][1] == 0 || matrix[3][1] == matrix[2][1]) {
+                    if (matrix[3][1] != 0) {
+                        scores += matrix[3][1] * 2;
+                    }
                         matrix[3][1] += matrix[2][1];
                         matrix[2][1] = 0;
                     }
                 if     (matrix[3][2] == 0 || matrix[3][2] == matrix[2][2]) {
+                    if (matrix[3][2] != 0) {
+                        scores += matrix[3][2] * 2;
+                    }
                         matrix[3][2] += matrix[2][2];
                         matrix[2][2] = 0;
                     }
                 if     (matrix[3][3] == 0 || matrix[3][3] == matrix[2][3]) {
+                    if (matrix[3][3] != 0) {
+                        scores += matrix[3][3] * 2;
+                    }
                         matrix[3][3] += matrix[2][3];
                         matrix[2][3] = 0;
                     }
 ////////////////
                 if     (matrix[2][0] == 0 || matrix[2][0] == matrix[1][0]) {
+                    if (matrix[2][0] != 0) {
+                        scores += matrix[2][0] * 2;
+                    }
                         matrix[2][0] += matrix[1][0];
                         matrix[1][0] = 0;
                     }
                 if     (matrix[2][1] == 0 || matrix[2][1] == matrix[1][1]) {
+                    if (matrix[2][1] != 0) {
+                        scores += matrix[2][1] * 2;
+                    }
                         matrix[2][1] += matrix[1][1];
                         matrix[1][1] = 0;
                     }
                 if     (matrix[2][2] == 0 || matrix[2][2] == matrix[1][2]) {
+                    if (matrix[2][2] != 0) {
+                        scores += matrix[2][2] * 2;
+                    }
                         matrix[2][2] += matrix[1][2];
                         matrix[1][2] = 0;
                     }
                 if     (matrix[2][3] == 0 || matrix[2][3] == matrix[1][3]) {
+                    if (matrix[2][3] != 0) {
+                        scores += matrix[2][3] * 2;
+                    }
                         matrix[2][3] += matrix[1][3];
                         matrix[1][3] = 0;
                     }
 ////////////////
                 if     (matrix[1][0] == 0 || matrix[1][0] == matrix[0][0]) {
+                    if (matrix[1][0] != 0) {
+                        scores += matrix[1][0] * 2;
+                    }
                         matrix[1][0] += matrix[0][0];
                         matrix[0][0] = 0;
                     }
                 if     (matrix[1][1] == 0 || matrix[1][1] == matrix[0][1]) {
+                    if (matrix[1][1] != 0) {
+                        scores += matrix[1][1] * 2;
+                    }
                         matrix[1][1] += matrix[0][1];
                         matrix[0][1] = 0;
                     }
                 if     (matrix[1][2] == 0 || matrix[1][2] == matrix[0][2]) {
+                    if (matrix[1][2] != 0) {
+                        scores += matrix[1][2] * 2;
+                    }
                         matrix[1][2] += matrix[0][2];
                         matrix[0][2] = 0;
                     }
                 if     (matrix[1][3] == 0 || matrix[1][3] == matrix[0][3]) {
+                    if (matrix[1][3] != 0) {
+                        scores += matrix[1][3] * 2;
+                    }
                         matrix[1][3] += matrix[0][3];
                         matrix[0][3] = 0;
                     }
@@ -240,52 +348,88 @@ int main() {
         else if (move[0] == 100 || move[0] == 68) {                                               //d
             for (int i = 0; i < 3; i++) {
                 if     (matrix[0][3] == 0 || matrix[0][3] == matrix[0][2]) {
+                    if (matrix[0][3] != 0) {
+                        scores += matrix[0][3] * 2;
+                    }
                         matrix[0][3] += matrix[0][2];
                         matrix[0][2] = 0;
                     }
                 if     (matrix[1][3] == 0 || matrix[1][3] == matrix[1][2]) {
+                    if (matrix[1][3] != 0) {
+                        scores += matrix[1][3] * 2;
+                    }
                         matrix[1][3] += matrix[1][2];
                         matrix[1][2] = 0;
                     }
                 if     (matrix[2][3] == 0 || matrix[2][3] == matrix[2][2]) {
+                    if (matrix[2][3] != 0) {
+                        scores += matrix[2][3] * 2;
+                    }
                         matrix[2][3] += matrix[2][2];
                         matrix[2][2] = 0;
                     }
                 if     (matrix[3][3] == 0 || matrix[3][3] == matrix[3][2]) {
+                    if (matrix[3][3] != 0) {
+                        scores += matrix[3][3] * 2;
+                    }
                         matrix[3][3] += matrix[3][2];
                         matrix[3][2] = 0;
                     }
 ////////////////
                 if     (matrix[0][2] == 0 || matrix[0][2] == matrix[0][1]) {
+                    if (matrix[0][2] != 0) {
+                        scores += matrix[0][2] * 2;
+                    }
                         matrix[0][2] += matrix[0][1];
                         matrix[0][1] = 0;
                 }
                 if     (matrix[1][2] == 0 || matrix[1][2] == matrix[1][1]) {
+                    if (matrix[1][2] != 0) {
+                        scores += matrix[1][2] * 2;
+                    }
                         matrix[1][2] += matrix[1][1];
                         matrix[1][1] = 0;
                 }
                 if     (matrix[2][2] == 0 || matrix[2][2] == matrix[2][1]) {
+                    if (matrix[2][2] != 0) {
+                        scores += matrix[2][2] * 2;
+                    }
                         matrix[2][2] += matrix[2][1];
                         matrix[2][1] = 0;
                 }
                 if     (matrix[3][2] == 0 || matrix[3][2] == matrix[3][1]) {
+                    if (matrix[3][2] != 0) {
+                        scores += matrix[3][2] * 2;
+                    }
                         matrix[3][2] += matrix[3][1];
                         matrix[3][1] = 0;
                 }
 ////////////////
                 if     (matrix[0][1] == 0 || matrix[0][1] == matrix[0][0]) {
+                    if (matrix[0][1] != 0) {
+                        scores += matrix[0][1] * 2;
+                    }
                         matrix[0][1] += matrix[0][0];
                         matrix[0][0] = 0;
                 }
                 if     (matrix[1][1] == 0 || matrix[1][1] == matrix[1][0]) {
+                    if (matrix[1][1] != 0) {
+                        scores += matrix[1][1] * 2;
+                    }
                         matrix[1][1] += matrix[1][0];
                         matrix[1][0] = 0;
                 }
                 if     (matrix[2][1] == 0 || matrix[2][1] == matrix[2][0]) {
+                    if (matrix[2][1] != 0) {
+                        scores += matrix[2][1] * 2;
+                    }
                         matrix[2][1] += matrix[2][0];
                         matrix[2][0] = 0;
                 }
                 if     (matrix[3][1] == 0 || matrix[3][1] == matrix[3][0]) {
+                    if (matrix[3][1] != 0) {
+                        scores += matrix[3][1] * 2;
+                    }
                         matrix[3][1] += matrix[3][0];
                         matrix[3][0] = 0;
                 }
